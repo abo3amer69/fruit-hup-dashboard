@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fruit_hup_dashboard/core/widgets/custom_text_form_field.dart';
+import 'package:fruit_hup_dashboard/core/widgets/image_field.dart';
 
 class AddProductViewBody extends StatefulWidget {
   const AddProductViewBody({super.key});
@@ -42,6 +43,8 @@ class _AddProductViewBodyState extends State<AddProductViewBody> {
                 hintText: 'Product description',
                 textInputType: TextInputType.number,
               ),
+              const SizedBox(height: 16),
+              ImageField(),
             ],
           ),
         ),
