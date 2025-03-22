@@ -7,7 +7,7 @@ import 'package:skeletonizer/skeletonizer.dart';
 class ImageField extends StatefulWidget {
   const ImageField({super.key, required this.onFileChanged});
 
-  final ValueChanged<File?>onFileChanged;
+  final ValueChanged<File?> onFileChanged;
 
   @override
   State<ImageField> createState() => _ImageFieldState();
@@ -35,20 +35,6 @@ class _ImageFieldState extends State<ImageField> {
         },
         child: Stack(
           children: [
-            Visibility(
-              visible: fileImage != null,
-              child: IconButton(
-                onPressed: () {
-
-                  fileImage=null;
-                  widget.onFileChanged(fileImage!);
-                  setState(() {
-                    
-                  });
-                },
-                icon: Icon(Icons.close, color: Colors.white),
-              ),
-            ),
             Container(
               width: double.infinity,
               decoration: BoxDecoration(
@@ -62,6 +48,17 @@ class _ImageFieldState extends State<ImageField> {
                         child: Image.file(fileImage!),
                       )
                       : const Icon(Icons.image_outlined, size: 180),
+            ),
+            Visibility(
+              visible: fileImage != null,
+              child: IconButton(
+                onPressed: () {
+                  fileImage = null;
+                  setState(() {});
+                },
+                icon: Icon(Icons.close),
+                color: Colors.red,
+              ),
             ),
           ],
         ),
