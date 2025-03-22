@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:fruit_hup_dashboard/core/widgets/custom_text_form_field.dart';
 import 'package:fruit_hup_dashboard/core/widgets/image_field.dart';
+import 'package:fruit_hup_dashboard/features/add_product/presentation/views/widgets/custom_check_box.dart';
+import 'package:fruit_hup_dashboard/features/add_product/presentation/views/widgets/is_featured_check_box.dart';
 
 class AddProductViewBody extends StatefulWidget {
   const AddProductViewBody({super.key});
@@ -41,10 +43,13 @@ class _AddProductViewBodyState extends State<AddProductViewBody> {
               CustomTextFormField(
                 maxLines: 5,
                 hintText: 'Product description',
-                textInputType: TextInputType.number,
+                textInputType: TextInputType.text,
               ),
               const SizedBox(height: 16),
-              ImageField(),
+
+              IsFeaturedCheckBox(onChanged: (value) {}),
+              SizedBox(height: 16),
+              ImageField(onFileChanged: (image) {}),
             ],
           ),
         ),
