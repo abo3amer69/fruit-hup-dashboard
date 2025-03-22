@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:fruit_hup_dashboard/core/widgets/custom_button.dart';
 import 'package:fruit_hup_dashboard/core/widgets/custom_text_form_field.dart';
 import 'package:fruit_hup_dashboard/core/widgets/image_field.dart';
+import 'package:fruit_hup_dashboard/features/add_product/domain/entities/add_product_input_entity.dart';
 import 'package:fruit_hup_dashboard/features/add_product/presentation/views/widgets/custom_check_box.dart';
 import 'package:fruit_hup_dashboard/features/add_product/presentation/views/widgets/is_featured_check_box.dart';
 
@@ -84,6 +85,14 @@ class _AddProductViewBodyState extends State<AddProductViewBody> {
                   if (image != null) {
                     if (_formKey.currentState!.validate()) {
                       _formKey.currentState!.save();
+                      AddProductInputEntity input = AddProductInputEntity(
+                        name: name,
+                        code: code,
+                        description: description,
+                        price: price,
+                        image: image!,
+                        isFeatured: isFeatured,
+                      );
                     } else {
                       autovalidateMode = AutovalidateMode.always;
                       setState(() {});
