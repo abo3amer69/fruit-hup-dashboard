@@ -6,6 +6,7 @@ import 'package:fruit_hup_dashboard/core/services/get_it_services.dart';
 import 'package:fruit_hup_dashboard/core/widgets/build_app_bar.dart';
 import 'package:fruit_hup_dashboard/features/add_product/presentation/manager/cubit/add_product_cubit.dart';
 import 'package:fruit_hup_dashboard/features/add_product/presentation/views/widgets/add_product_view_body.dart';
+import 'package:fruit_hup_dashboard/features/add_product/presentation/views/widgets/add_product_view_body_bloc_builder.dart';
 
 class AddProductView extends StatelessWidget {
   const AddProductView({super.key});
@@ -21,8 +22,9 @@ class AddProductView extends StatelessWidget {
           getIt.get<ImagesRepo>(),
           getIt.get<ProductsRepo>(),
         ),
-        child: AddProductViewBody(),
+        child: AddProductViewBodyBlocBuilder(),
       ),
     );
   }
 }
+

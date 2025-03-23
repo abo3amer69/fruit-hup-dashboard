@@ -41,9 +41,9 @@ class AddProductInputModel {
       'code': code,
       'description': description,
       'price': price,
-      'image': image,
+
       'isFeatured': isFeatured,
-      'imageUrl': imageUrl
+      'imageUrl': imageUrl,
     };
   }
 }
