@@ -7,11 +7,15 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 class SupabaseStorageServices implements StorageServices {
   static late Supabase _supabase;
 
+  static createBuckets(String bucketName) async {
+    await _supabase.client.storage.createBucket(bucketName);
+  }
+
   static initSupabase() async {
     _supabase = await Supabase.initialize(
       url: 'https://fglezhmlkpronldzdsso.supabase.co',
       anonKey:
-          'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZnbGV6aG1sa3Byb25sZHpkc3NvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDI4NDM4NDcsImV4cCI6MjA1ODQxOTg0N30.ti1dH2MZQVayvheUN30W8HDAhOFn1qDqRcAbeWHx-0A',
+          'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZnbGV6aG1sa3Byb25sZHpkc3NvIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc0Mjg0Mzg0NywiZXhwIjoyMDU4NDE5ODQ3fQ.WCPSnkgxR2fnuT0GX8w2rh4p75ays5lcWFvFq5eB5zI',
     );
   }
 

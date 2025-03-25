@@ -12,6 +12,7 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await SupabaseStorageServices.initSupabase();
+  await SupabaseStorageServices.createBuckets('fruits_images');
   Bloc.observer = CustomBlocObserver();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   setupGetit();
