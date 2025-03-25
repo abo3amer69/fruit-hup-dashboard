@@ -6,12 +6,13 @@ import 'package:fruit_hup_dashboard/core/services/database_services.dart';
 import 'package:fruit_hup_dashboard/core/services/fire_storage.dart';
 import 'package:fruit_hup_dashboard/core/services/firestore_services.dart';
 import 'package:fruit_hup_dashboard/core/services/storage_services.dart';
+import 'package:fruit_hup_dashboard/core/services/supabase_storage_services.dart';
 import 'package:get_it/get_it.dart';
 
 final getIt = GetIt.instance;
 
 void setupGetit() {
-  getIt.registerSingleton<StorageServices>(FireStorage());
+  getIt.registerSingleton<StorageServices>(SupabaseStorageServices());
   getIt.registerSingleton<DatabaseServices>(FirestoreServices());
 
   getIt.registerSingleton<ImagesRepo>(
