@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fruit_hup_dashboard/features/add_product/presentation/views/add_product_view.dart';
 import 'package:fruit_hup_dashboard/features/dashboard/presentation/views/dashboard_view.dart';
+import 'package:fruit_hup_dashboard/features/orders/presentation/views/order_view.dart';
 
 Route onGenerateRoute(RouteSettings settings) {
   switch (settings.name) {
@@ -9,6 +10,10 @@ Route onGenerateRoute(RouteSettings settings) {
 
        case AddProductView.routeName:
       return MaterialPageRoute(builder: (context) => const AddProductView());
+
+      
+       case OrderView.routeName:
+      return MaterialPageRoute(builder: (context) => const OrderView());
 
 
     default:
