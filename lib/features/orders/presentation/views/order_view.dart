@@ -4,10 +4,13 @@ import 'package:fruit_hup_dashboard/features/orders/presentation/views/widgets/o
 class OrderView extends StatelessWidget {
   const OrderView({super.key});
 
-  static const  routeName = 'order';
+  static const routeName = 'order';
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: OrderViewBody());
+    return Scaffold(
+      appBar: AppBar(title: Text('Orders')),
+      body: OrderViewBody(),
+    );
   }
 }
