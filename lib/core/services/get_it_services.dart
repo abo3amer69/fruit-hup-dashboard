@@ -7,6 +7,8 @@ import 'package:fruit_hup_dashboard/core/services/fire_storage.dart';
 import 'package:fruit_hup_dashboard/core/services/firestore_services.dart';
 import 'package:fruit_hup_dashboard/core/services/storage_services.dart';
 import 'package:fruit_hup_dashboard/core/services/supabase_storage_services.dart';
+import 'package:fruit_hup_dashboard/features/orders/data/repos/orders_repo_impl.dart';
+import 'package:fruit_hup_dashboard/features/orders/domain/repos/order_repo.dart';
 import 'package:get_it/get_it.dart';
 
 final getIt = GetIt.instance;
@@ -21,5 +23,9 @@ void setupGetit() {
   );
   getIt.registerSingleton<ProductsRepo>(ProductsRepoImpl(
     getIt.get<DatabaseServices>(),
+  ));
+
+   getIt.registerSingleton<OrdersRepo>(OrderRepoImpl(
+    getIt.get<FirestoreServices>(),
   ));
 }

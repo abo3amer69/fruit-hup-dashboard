@@ -23,6 +23,7 @@ class OrderRepoImpl implements OrdersRepo {
       return right(orders);
     } catch (e) {
       return left(ServerFailure('failed to fetch orders'));
+      
     }
   }
 }
