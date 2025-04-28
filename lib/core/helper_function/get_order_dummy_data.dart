@@ -19,21 +19,24 @@ OrderEntity getDummyOrder() {
     OrderProductEntity(
       name: 'Apple',
       code: 'A123',
-      imageUrl: 'https://example.com/apple.jpg',
+      imageUrl:
+          'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcT90awoHrzBfmnOsQ4zV_vU1kJmgxJsjALKNdHf4NOXeh0GclY1Wwo1LRWYmwt5y8UUDyL5Cpt1CpIiqhCyxZFPVa9nXbnRZnL5fVuiug',
       price: 1.99,
       quantity: 2,
     ),
     OrderProductEntity(
       name: 'Banana',
       code: 'B456',
-      imageUrl: 'https://example.com/banana.jpg',
+      imageUrl:
+          'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcT90awoHrzBfmnOsQ4zV_vU1kJmgxJsjALKNdHf4NOXeh0GclY1Wwo1LRWYmwt5y8UUDyL5Cpt1CpIiqhCyxZFPVa9nXbnRZnL5fVuiug',
       price: 2.99,
       quantity: 1,
     ),
     OrderProductEntity(
       name: 'Orange',
       code: 'O789',
-      imageUrl: 'https://example.com/orange.jpg',
+      imageUrl:
+          'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcT90awoHrzBfmnOsQ4zV_vU1kJmgxJsjALKNdHf4NOXeh0GclY1Wwo1LRWYmwt5y8UUDyL5Cpt1CpIiqhCyxZFPVa9nXbnRZnL5fVuiug',
       price: 1.49,
       quantity: 3,
     ),
