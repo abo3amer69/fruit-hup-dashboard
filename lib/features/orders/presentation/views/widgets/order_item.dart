@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:fruit_hup_dashboard/features/orders/data/models/order_model.dart';
+import 'package:fruit_hup_dashboard/features/orders/domain/entities/order_entity.dart';
 
 class OrderItemWidget extends StatelessWidget {
   const OrderItemWidget({super.key, required this.orderModel});
 
-  final OrderModel orderModel;
+  final OrderEntity orderModel;
 
   @override
   Widget build(BuildContext context) {

@@ -1,9 +1,12 @@
 import 'package:fruit_hup_dashboard/features/orders/data/models/order_model.dart';
 import 'package:fruit_hup_dashboard/features/orders/data/models/order_product_model.dart';
 import 'package:fruit_hup_dashboard/features/orders/data/models/shipping_adress_model.dart';
+import 'package:fruit_hup_dashboard/features/orders/domain/entities/order_entity.dart';
+import 'package:fruit_hup_dashboard/features/orders/domain/entities/order_product_entity.dart';
+import 'package:fruit_hup_dashboard/features/orders/domain/entities/shipping_adress_entity.dart';
 
-OrderModel getDummyOrder() {
-  ShippingAdressModel shippingAdress = ShippingAdressModel(
+OrderEntity getDummyOrder() {
+  ShippingAdressEntity shippingAdress = ShippingAdressEntity(
     name: 'John Doe',
     phone: '123-456-7890',
     adress: '123 Main St',
@@ -12,22 +15,22 @@ OrderModel getDummyOrder() {
     email: '4M6oX@example.com',
   );
 
-  List<OrderProductModel> orderProducts = [
-    OrderProductModel(
+  List<OrderProductEntity> orderProducts = [
+    OrderProductEntity(
       name: 'Apple',
       code: 'A123',
       imageUrl: 'https://example.com/apple.jpg',
       price: 1.99,
       quantity: 2,
     ),
-    OrderProductModel(
+    OrderProductEntity(
       name: 'Banana',
       code: 'B456',
       imageUrl: 'https://example.com/banana.jpg',
       price: 2.99,
       quantity: 1,
     ),
-    OrderProductModel(
+    OrderProductEntity(
       name: 'Orange',
       code: 'O789',
       imageUrl: 'https://example.com/orange.jpg',
@@ -39,7 +42,7 @@ OrderModel getDummyOrder() {
     0,
     (sum, product) => sum + (product.price * product.quantity),
   );
-  return OrderModel(
+  return OrderEntity(
     totalPrice: totalPrice,
     uId: 'user123',
     shippingAdressModel: shippingAdress,
