@@ -24,10 +24,10 @@ class OrderModel {
       shippingAdressModel: ShippingAdressModel.fromJson(
         json['shippingAdressModel'],
       ),
-      orderProduct:
-          json['orderProduct']
-              .map((e) => OrderProductModel.fromJson(e))
-              .toList(),
+      orderProduct: List<OrderProductModel>.from(
+        json['orderProduct'].map((e) => OrderProductModel.fromJson(e)),
+      ),
+
       paymentMethod: json['paymentMethod'],
     );
   }

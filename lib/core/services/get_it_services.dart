@@ -26,6 +26,6 @@ void setupGetit() {
   ));
 
    getIt.registerSingleton<OrdersRepo>(OrderRepoImpl(
-    getIt.get<FirestoreServices>(),
+    getIt.get<DatabaseServices>(),
   ));
 }
