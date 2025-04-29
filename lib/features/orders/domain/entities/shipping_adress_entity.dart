@@ -1,5 +1,3 @@
-
-
 class ShippingAdressEntity {
   String? name;
   String? phone;
@@ -17,5 +15,9 @@ class ShippingAdressEntity {
     this.city,
     this.email,
   });
- 
+
+  @override
+  String toString() {
+    return '$adress $floor $city';
+  }
 }

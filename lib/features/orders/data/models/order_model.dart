@@ -1,3 +1,4 @@
+import 'package:fruit_hup_dashboard/core/enums/order_enum.dart';
 import 'package:fruit_hup_dashboard/features/orders/data/models/order_product_model.dart';
 import 'package:fruit_hup_dashboard/features/orders/data/models/shipping_adress_model.dart';
 import 'package:fruit_hup_dashboard/features/orders/domain/entities/order_entity.dart';
@@ -8,9 +9,11 @@ class OrderModel {
   final ShippingAdressModel shippingAdressModel;
   final List<OrderProductModel> orderProduct;
   final String paymentMethod;
+  final String? status;
 
   OrderModel({
     required this.totalPrice,
+    required this.status,
     required this.uId,
     required this.shippingAdressModel,
     required this.orderProduct,
@@ -19,6 +22,7 @@ class OrderModel {
 
   factory OrderModel.fromJson(Map<String, dynamic> json) {
     return OrderModel(
+      status: json['status'],
       totalPrice: json['totalPrice'],
       uId: json['uId'],
       shippingAdressModel: ShippingAdressModel.fromJson(
@@ -44,9 +48,17 @@ class OrderModel {
 
   toEntity() => OrderEntity(
     totalPrice: totalPrice,
+    status: fetchEnum(),
     uId: uId,
     shippingAdressModel: shippingAdressModel.toEntity(),
     orderProduct: orderProduct.map((e) => e.toEntity()).toList(),
     paymentMethod: paymentMethod,
   );
+
+  OrderEnum fetchEnum() {
+    return OrderEnum.values.firstWhere((e) {
+      var enumStatus = e.name.toString();
+      return enumStatus == (status ?? 'pending');
+    });
+  }
 }

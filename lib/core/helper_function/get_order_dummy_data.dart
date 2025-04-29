@@ -1,3 +1,4 @@
+import 'package:fruit_hup_dashboard/core/enums/order_enum.dart';
 import 'package:fruit_hup_dashboard/features/orders/data/models/order_model.dart';
 import 'package:fruit_hup_dashboard/features/orders/data/models/order_product_model.dart';
 import 'package:fruit_hup_dashboard/features/orders/data/models/shipping_adress_model.dart';
@@ -46,6 +47,7 @@ OrderEntity getDummyOrder() {
     (sum, product) => sum + (product.price * product.quantity),
   );
   return OrderEntity(
+    status: OrderEnum.pending,
     totalPrice: totalPrice,
     uId: 'user123',
     shippingAdressModel: shippingAdress,
