@@ -9,9 +9,19 @@ abstract class DatabaseServices {
 
   Future<dynamic> getData({
     required String path,
-     String documentId,
+     String? documentId,
     Map<String,dynamic>?query,
   });
+
+
+
+  
+  Stream<dynamic> streamData({
+    required String path,
+     
+    Map<String,dynamic>?query,
+  });
+
 
   Future<bool> checkedIfDataExist({
     required String path,
