@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:fruit_hup_dashboard/core/enums/order_enum.dart';
 import 'package:fruit_hup_dashboard/features/orders/data/models/order_model.dart';
 import 'package:fruit_hup_dashboard/features/orders/domain/entities/order_entity.dart';
+import 'package:fruit_hup_dashboard/features/orders/presentation/views/widgets/order_action_button.dart';
 
 class OrderItemWidget extends StatelessWidget {
   const OrderItemWidget({super.key, required this.orderModel});
@@ -91,6 +92,9 @@ class OrderItemWidget extends StatelessWidget {
                 );
               },
             ),
+            SizedBox(height: 16,),
+        OrderActionButtons(orderEntity: orderModel),
+
           ],
         ),
       ),

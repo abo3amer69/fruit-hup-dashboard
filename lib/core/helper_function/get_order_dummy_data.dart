@@ -47,6 +47,7 @@ OrderEntity getDummyOrder() {
     (sum, product) => sum + (product.price * product.quantity),
   );
   return OrderEntity(
+    orderID: 'order123',
     status: OrderStatusEnum.pending,
     totalPrice: totalPrice,
     uId: 'user123',
